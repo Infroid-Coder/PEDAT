@@ -106,8 +106,6 @@ registerInputs.forEach(elem => {
     elem.addEventListener("keydown", e => {
         if(e.key === "Enter" && !e.ctrlKey && !e.shiftKey && !e.altKey && !e.metaKey){
             registerBtn.click();
-        } else{
-            console.log(e.key);
         }
     })
 });
@@ -115,8 +113,7 @@ loginInputs.forEach(elem => {
     elem.addEventListener("keydown", e => {
         if(e.key === "Enter" && !e.ctrlKey && !e.shiftKey && !e.altKey && !e.metaKey){
             loginBtn.click();
-        } else{
-            console.log(e.key);
         }
     })
 });
+
