@@ -23,9 +23,11 @@ let registerSubject = document.getElementById("register-t-subject");
 let registerGrade = document.getElementById("register-s-grade");
 let registerBtn = document.getElementById("register");
 
+let loginUName = document.getElementById("login-uname");
+let loginPsw = document.getElementById("login-psw");
 let loginBtn = document.getElementById("login");
 
 let registerInputs = document.querySelectorAll("#register-popup input");
 let loginInputs = document.querySelectorAll("#login-popup input");
 
-let selectedRegisterType = 0; // Bool(Student) = 0, Bool(Teacher) = 1;
+let isTeacher = 0; // Bool(Student) = 0, Bool(Teacher) = 1;
