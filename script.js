@@ -49,7 +49,7 @@ window.addEventListener("scroll", e => {
 
 
 
-if(selectedRegisterType){
+if(isTeacher){
     registerAsTeacher.classList.add("register-type-selected");
     registerAsStudent.classList.remove("register-type-selected");
     studentInputs.style.display = "none"
@@ -79,6 +79,7 @@ registerAsStudent.onclick = () => {
     } else{
         studentInputs.style.display = "block";
     }
+    isTeacher = 0;
 }
 registerAsTeacher.onclick = () => {
     registerAsTeacher.classList.add("register-type-selected");
@@ -98,6 +99,7 @@ registerAsTeacher.onclick = () => {
     } else{
         teacherInputs.style.display = "block";
     }
+    isTeacher = 1;
 }
 
 registerInputs.forEach(elem => {
