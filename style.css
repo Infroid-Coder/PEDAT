@@ -9,11 +9,13 @@
     -ms-user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
 .icon-img{
     margin: auto;
     display: block;
     line-height: 1;
+    -webkit-user-drag: none;
 }
 
 
@@ -57,6 +59,9 @@ img, a, button{
     -ms-user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
+}
+img{
+    -webkit-user-drag: none;
 }
 #navbar{
     display: grid;
@@ -138,6 +143,27 @@ img, a, button{
     background: var(--c4);
     color: var(--bg);
     border-color: var(--c4);
+}
+#login-a, #register-a{
+    display: block;
+    margin: auto;
+}
+#register-icon-btn, #login-icon-btn{
+    width: 19px;
+    margin: auto;
+    display: block;
+    filter: invert(1);
+    transition: .2s;
+    display: none;
+}
+#register-icon-btn{
+    width: 26px;
+}
+#login-icon-btn:hover{
+    transform: translateX(5px);
+}
+#register-icon-btn:hover{
+    transform: scale(1.1);
 }
 #register-btn{
     background: var(--fg);
@@ -258,6 +284,7 @@ img, a, button{
     background: var(--c1);
     border-radius: 20px;
     width: 32vw;
+    max-height: 90%;
     transition: .2s;
     animation: expand .3s;
 }
@@ -539,7 +566,7 @@ img, a, button{
     position: absolute;
     /* top: 100%; */
     left: 0;
-    height: 50vh;
+    height: 310px;
     width: 100%;
     background: linear-gradient(
         90deg,
@@ -551,7 +578,7 @@ img, a, button{
 }
 #footer{
     width: 100%;
-    height: calc(50vh - 35px);
+    height: calc(310px - 35px);
     /* background: linear-gradient(135deg, black, rgba(255, 255, 255, 0)); */
     padding: 25px 0px;
     padding-bottom: 0px;
@@ -585,6 +612,9 @@ img, a, button{
     margin: auto;
     font-size: 30px;
 }
+#footer-desc{
+    text-align: justify;
+}
 #sm-divs{
     display: grid;
 }
@@ -612,9 +642,12 @@ img, a, button{
     margin: 0 auto;
     width: fit-content;
 }
-#footer-links-title, #footer-contact-title{
+#footer-links-title, #footer-links-title-alt, #footer-contact-title{
     margin: auto 0;
     font-size: 23px;
+}
+#footer-links-title-alt{
+    display: none;
 }
 #footer-links{
     margin-left: 25px;
@@ -670,7 +703,8 @@ img, a, button{
 }
 #footer-cr-sec p{
     width: 90%;
-    padding: 0px;
+    padding: 5px 0px;
+    padding-top: 0px;
     margin: auto;
 }
 
@@ -757,6 +791,11 @@ img, a, button{
         /* margin-top: 10px; */
     }
 }
+@media screen and (max-width: 1200px){
+    #auth-popup{
+        width: 37vw;
+    }
+}
 @media screen and (max-width: 1100px){
     #hero-content-wrapper{
         grid-template-rows: 1fr 70px;
@@ -775,6 +814,11 @@ img, a, button{
     }
     
 }
+@media screen and (max-width: 1050px){
+    #auth-popup{
+        width: 40vw;
+    }
+}
 @media screen and (max-width: 1000px){
     #hero-img{
         width: 90%;
@@ -785,7 +829,35 @@ img, a, button{
     .about-card{
         width: 85%;
     }
-    /* .abt */
+    .footer-contact-method-content{   
+        font-size: 15px;
+    }
+    #footer-contact-farewell{
+        font-size: 15px;
+    }
+    .footer-link{
+        font-size: 15px;
+    }
+    #footer-desc{
+        font-size: 15px;
+        margin-bottom: 0px;
+    }
+    #footer-title, #footer-links-title, #footer-contact-title{
+        font-size: 20px;
+    }
+    #footer-sec-3-content{
+        margin: 0 auto;
+    }
+    #footer-sec1{
+        margin-left: 0px;
+    }
+    #footer-links-title{
+        display: none;
+    }
+    #footer-links-title-alt{
+        display: block;
+        font-size: 20px;
+    }
 }
 @media screen and (max-width: 950px){
     #about-content{
@@ -796,6 +868,9 @@ img, a, button{
     }
     .contact-card-email-icon{
         width: 19px;
+    }
+    #auth-popup{
+        width: 45vw;
     }
 }
 @media screen and (max-width: 920px){
@@ -846,6 +921,10 @@ img, a, button{
     .about-card-title{
         font-size: 21.5px;
     }
+    #footer-content{
+        grid-template-columns: 1fr max-content 1fr;
+        grid-column-gap: 25px;
+    }
 }
 @media screen and (max-width: 850px){
     #hero-title{
@@ -863,6 +942,9 @@ img, a, button{
     }
     .about-text{
         font-size: 15px;
+    }
+    #auth-popup{
+        width: 50vw;
     }
 }
 @media screen and (max-width: 800px){
@@ -939,10 +1021,58 @@ img, a, button{
     .about-text:nth-of-type(3){
         grid-row: 3;
     }
+    #auth-popup{
+        width: 58vw;
+    }
+}
+@media screen and (max-width: 700px){
+    #footer-bg{
+        height: 480px;
+    }
+    #footer-content{
+        grid-template-columns: 0.7fr 1.3fr;
+    }
+    #footer-sec1{
+        grid-column: span 2;
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+    #footer-desc{
+        margin-bottom: 15px;
+    }
+    #sm-divs-wrapper{
+        text-align: center;
+        margin: 0 auto;
+        /* width: 80%; */
+    }
+    #footer-cr-sec{
+        grid-column: span 2;
+        margin-top: 15px;
+    }
+    #footer-cr-sec p{
+        margin-top: 10px;
+    }
+    #footer-sec-3-content{
+        grid-template-rows: 40px 1fr;
+        grid-row-gap: 0px;
+    }
+    #footer-sec-2-content{
+        grid-row-gap: 0px;
+    }
+    #login-btn, #register-btn{
+        display: none;
+    }
+    #login-icon-btn, #register-icon-btn{
+        display: block;
+    }
 }
 @media screen and (max-width: 650px){
     #about-content{
         grid-row-gap: 9px;
+    }
+    #auth-popup{
+        width: 68vw;
     }
 }
 @media screen and (max-width: 600px){
@@ -958,6 +1088,9 @@ img, a, button{
     }
     .contact-card{
         width: 60%;
+    }
+    #footer-bg{
+        height: 500px;
     }
 }
 @media screen and (max-width: 550px){
@@ -976,5 +1109,56 @@ img, a, button{
     }
     .about-card:nth-of-type(3){
         grid-column: 1;
+    }
+    #auth-popup{
+        width: 78vw;
+    }
+}
+@media screen and (max-width: 500px){
+    #auth-popup{
+        width: 88vw;
+    }
+    #nav-title{
+        display: none;
+    }
+    #navbar{
+        grid-template-columns: max-content repeat(5, 1fr);
+    }
+    .nav-item:nth-child(2){
+        grid-column: 2;
+    }
+    .nav-item:nth-child(3){
+        grid-column: 3;
+    }
+    .nav-item:nth-child(4){
+        grid-column: 4;
+    }
+    .nav-item:nth-child(5){
+        grid-column: 5;
+    }
+    .nav-item:nth-child(6){
+        grid-column: 6;
+    }
+}
+@media screen and (max-width: 470px){
+    #footer-bg{
+        height: 530px;
+    }
+    #footer-cr-sec{
+        width: 95%;
+    }
+    #footer-cr-sec p{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 400px){
+    #footer-bg{
+        height: 550px;
+    }
+    #footer-cr-sec{
+        width: 95%;
+    }
+    #footer-cr-sec p{
+        font-size: 14px;
     }
 }
