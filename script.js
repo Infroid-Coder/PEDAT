@@ -38,13 +38,18 @@ window.addEventListener("scroll", e => {
     aboutCards.forEach((card, i) => {
         if(scrollY >= getScrollHeight(card)){
             card.style.animation = animationStyle[i];
+            card.style.dispay = "grid";
         }
     });
     aboutTexts.forEach((text, i) => {
         if(scrollY >= getScrollHeight(text)){
             text.style.animation = "slide-fade-in 1.1s";
+            text.style.dispay = "block";
         }
     });
+    if(scrollY >= getScrollHeight(aboutTextRes)){
+        aboutTextRes.style.animation = "slide-fade-in 1.1s";
+    }
 });
 
 
