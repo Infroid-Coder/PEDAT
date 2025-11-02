@@ -1,0 +1,202 @@
+#auth-popup-wrapper{
+    position: fixed;
+    display: grid;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+    display: none;
+}
+#auth-popup{
+    margin: auto;
+    background: var(--c1);
+    border-radius: 20px;
+    width: 32vw;
+    max-height: 90%;
+    transition: .2s;
+    animation: expand .3s;
+}
+#auth-popup label{
+    display: block;
+    font-size: 17px;
+    margin: 0px;
+    margin-top: 15px;
+    margin-bottom: 3px;
+}
+#login-popup{
+    display: none;
+}
+#register-popup{
+    display: none;
+    padding: 30px;
+}
+#register-user-type{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 20px;
+}
+#register-utype-label{
+    font-size: 17px;
+    padding: 0px;
+    margin: auto 0;
+}
+.register-type{
+    font-size: 17px;
+    padding: 7px 5px;
+    border-radius: 100px;
+    border: none;
+    background: var(--c2);
+    font-weight: 500;
+    cursor: pointer;
+    transition: .2s;
+}
+.register-type:hover{
+    color: var(--c2);
+    background: rgba(var(--bg-rgb), .7);
+}
+.register-type-selected{
+    color: var(--c2);
+    background: var(--bg);
+}
+.auth-input{
+    padding: 7px 15px;
+    font-size: 17px;
+    color: black;
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    width: 90%;
+    margin: 0px;
+}
+.auth-button{
+    padding: 12px;
+    font-size: 17px;
+    margin: auto;
+    text-align: center;
+    display: block;
+    margin-top: 25px;
+    width: 70%;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 999px;
+    background: rgb(221, 255, 218);
+    display: grid;
+    transition: .2s;
+}
+.auth-button:hover{
+    background: rgb(179, 255, 170);
+}
+.auth-btn-text{
+    color: black;
+    margin: auto;
+    font-size: 17px;
+}
+.auth-btn-img{
+    width: 17px;
+}
+.auth-button:hover .auth-btn-content{
+    transform: translateX(5px);
+}
+.auth-btn-content{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    margin: auto;
+    grid-gap: 5px;
+    line-height: 1;
+    transition: .15s;
+}
+#register-title{
+    margin: 5px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+    font-size: 35px;
+}
+#register-t, #register-s{
+    display: none;
+    margin: auto;
+}
+#register-t-subject, #register-s-grade{
+    width: 98.5%;
+    font-size: 17px;
+}
+#register-t-subject option, #register-s-grade option{
+    color: black;
+}
+#login-popup{
+    margin: 30px;
+}
+#login-title{
+    margin: 5px;
+    margin-bottom: 30px;
+    margin-left: 0px;
+    font-size: 35px;
+}
+#popup-close-btn{
+    position: fixed;
+    top: 25px;
+    right: 15px;
+    cursor: pointer;
+}
+.close-line{
+    width: 25px;
+    height: 4px;
+    background: var(--fg);
+    transform: rotate(45deg);
+    border-radius: 99px;
+}
+.close-line:nth-child(2){
+    transform: translateY(-4px) rotate(-45deg);
+}
+
+
+@media screen and (max-width: 1200px){
+    #auth-popup{
+        width: 37vw;
+    }
+}
+
+@media screen and (max-width: 1050px){
+    #auth-popup{
+        width: 40vw;
+    }
+}
+
+@media screen and (max-width: 950px){
+    #auth-popup{
+        width: 45vw;
+    }
+}
+
+@media screen and (max-width: 850px){
+    #auth-popup{
+        width: 50vw;
+    }
+}
+
+@media screen and (max-width: 750px){
+    #auth-popup{
+        width: 58vw;
+    }
+}
+
+@media screen and (max-width: 650px){
+    #auth-popup{
+        width: 68vw;
+    }
+}
+
+@media screen and (max-width: 550px){
+    #auth-popup{
+        width: 78vw;
+    }
+}
+
+@media screen and (max-width: 500px){
+    #auth-popup{
+        width: 88vw;
+    }   
+}
